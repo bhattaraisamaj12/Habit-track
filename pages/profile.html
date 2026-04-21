@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Profile</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="../Frontend/css/profile.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div id="navbar">
+            <a href="/habit-tracker/pages/dashboard.php">Home</a>
+        </div>
+
+        <h2>👤 Profile</h2>
+
+
+        <div class="profile-box">
+            <p><strong>Username:</strong> <span id="username">Loading...</span></p>
+            <p><strong>Email:</strong> <span id="email">Loading...</span></p>
+            <p><strong>Joined:</strong> <span id="createdAt">Loading...</span></p>
+
+            <button onclick="openEdit()">Edit Profile</button>
+        </div>
+
+        <!-- WEEKLY CHART -->
+        <div class="chart-box">
+            <h3>📊 Weekly Completion Trend</h3>
+            <canvas id="weeklyChart"></canvas>
+        </div>
+
+    </div>
+    <!-- EDIT MODAL -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h3>Edit Profile</h3>
+            <input type="text" id="newUsername" placeholder="Enter new username">
+            <button onclick="saveProfile()">Save</button>
+            <button onclick="closeEdit()">Cancel</button>
+        </div>
+    </div>
+
+    <script src="../Frontend/js/profile.js"></script>
+
+</body>
+
+</html>

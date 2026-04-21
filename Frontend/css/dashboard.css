@@ -1,0 +1,345 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    color: #e2e8f0;
+
+    background:
+        radial-gradient(circle at 20% 20%, rgba(76, 175, 80, 0.15), transparent 40%),
+        radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.12), transparent 40%),
+        linear-gradient(135deg, #0f172a, #020617);
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+/* NAVBAR */
+.navbar {
+    width: 100%;
+    height: 70px;
+    background: rgba(8, 20, 37, 0.7);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #66dd8b, #16a34a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 20px;
+}
+
+.card.big {
+    grid-row: span 2;
+}
+
+#consistency {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#consistency::after {
+    content: "";
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 120px;
+    height: 120px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #66dd8b, #4ade80);
+    opacity: 0.2;
+    filter: blur(10px);
+}
+
+#consistency p {
+    font-size: 32px;
+    margin-top: 15px;
+}
+
+.consistency-text {
+    max-width: 450px;
+}
+
+.consistency-text h2 {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+
+@media (max-width: 900px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .card.big {
+        grid-row: auto;
+    }
+}
+
+.card {
+    position: relative;
+    background: rgba(21, 32, 49, 0.6);
+    backdrop-filter: blur(25px);
+    border-radius: 20px;
+    padding: 25px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: 0.3s ease;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.card::before {
+    content: "";
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(102, 221, 139, 0.25), transparent);
+    top: -30px;
+    right: -30px;
+    filter: blur(40px);
+    z-index: 0;
+
+}
+
+.card:hover {
+    transform: translateY(-6px) scale(1.01);
+}
+
+.card h3 {
+    margin: 0;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #9fb3c8;
+    text-transform: uppercase;
+}
+
+.card p {
+    font-size: 36px;
+    font-weight: bold;
+    color: #66dd8b;
+    margin-top: 10px;
+}
+
+#mainStreak {
+    border-left: 4px solid #ff7a18;
+}
+
+#performance {
+    border-left: 4px solid #7c3aed;
+}
+
+.habits {
+    margin-top: 30px;
+}
+
+.habits h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.habit-card {
+    background: rgba(21, 32, 49, 0.6);
+    backdrop-filter: blur(20px);
+    padding: 18px;
+    border-radius: 14px;
+    margin-bottom: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: 0.3s;
+}
+
+.habit-card:hover {
+    transform: translateY(-3px);
+}
+
+.habit-card.done {
+    background: rgba(34, 197, 94, 0.12);
+    border: 1px solid rgba(102, 221, 139, 0.4);
+}
+
+.actions {
+    display: flex;
+    gap: 10px;
+}
+
+.complete-btn {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, #ff4d4d, #cc0000);
+    border: none;
+    padding: 6px 12px;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+/* FORM */
+.form {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr auto;
+    gap: 12px;
+    align-items: end;
+    margin-top: 10px;
+}
+
+.form input {
+    height: 42px;
+}
+
+#sub {
+    height: 63px;
+    width: 70px;
+}
+
+.form input,
+input[type="time"] {
+    background: #152031;
+    color: white;
+    border: 1px solid #2a3a52;
+    border-radius: 8px;
+    padding: 12px;
+
+    color-scheme: dark;
+}
+
+
+.form input::placeholder {
+    color: #8892a6;
+}
+
+input:focus {
+    outline: none;
+    border: 1px solid #66dd8b;
+}
+
+.time-range {
+    display: contents;
+}
+
+.time-range div {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    color: #8892a6;
+}
+
+.time-range label {
+    margin-bottom: 4px;
+    color: #8892a6;
+}
+
+.form button {
+    height: 42px;
+    background: linear-gradient(135deg, #66dd8b, #4ade80);
+    border-radius: 10px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.avatar {
+    background: linear-gradient(135deg, #66dd8b, #16a34a);
+    box-shadow: 0 0 15px rgba(102, 221, 139, 0.4);
+}
+
+.profile {
+    position: relative;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 0;
+    background: rgba(21, 32, 49, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 10px;
+    display: none;
+    min-width: 150px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    cursor: pointer;
+    z-index: 4;
+}
+
+.dropdown a {
+    display: block;
+    padding: 10px;
+    color: #d8e3fb;
+    text-decoration: none;
+}
+
+.dropdown a:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.donut {
+    width: 250px;
+    height: 250px;
+    margin-top: 20px;
+    position: relative;
+}
+
+.donut::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30%;
+    background: conic-gradient(#66dd8b var(--progress, 0%),
+            rgba(255, 255, 255, 0.05) 0%);
+}
+
+.donut-inner {
+    position: absolute;
+    inset: 10px;
+    border-radius: 30%;
+    background: #081425;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donut-inner span {
+    font-size: 22px;
+    font-weight: bold;
+    color: #66dd8b;
+}
