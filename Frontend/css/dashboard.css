@@ -2,11 +2,17 @@ body {
     margin: 0;
     font-family: 'Segoe UI', sans-serif;
     color: #e2e8f0;
+    min-height: 100vh;
+    overflow-x: hidden;
 
     background:
         radial-gradient(circle at 20% 20%, rgba(76, 175, 80, 0.15), transparent 40%),
         radial-gradient(circle at 80% 0%, rgba(59, 130, 246, 0.12), transparent 40%),
         linear-gradient(135deg, #0f172a, #020617);
+}
+
+* {
+    box-sizing: border-box;
 }
 
 .container {
@@ -36,6 +42,12 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.nav-left h2 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.2;
 }
 
 .avatar {
@@ -146,6 +158,7 @@ body {
     font-weight: bold;
     color: #66dd8b;
     margin-top: 10px;
+    overflow-wrap: anywhere;
 }
 
 #mainStreak {
@@ -178,6 +191,7 @@ body {
     align-items: center;
 
     transition: 0.3s;
+    gap: 14px;
 }
 
 .habit-card:hover {
@@ -201,6 +215,7 @@ body {
     border-radius: 8px;
     color: white;
     cursor: pointer;
+    min-height: 36px;
 }
 
 .delete-btn {
@@ -210,6 +225,7 @@ body {
     border-radius: 8px;
     color: white;
     cursor: pointer;
+    min-height: 36px;
 }
 
 /* FORM */
@@ -223,6 +239,7 @@ body {
 
 .form input {
     height: 42px;
+    width: 100%;
 }
 
 #sub {
@@ -342,4 +359,129 @@ input:focus {
     font-size: 22px;
     font-weight: bold;
     color: #66dd8b;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 18px 14px;
+    }
+
+    .navbar {
+        height: auto;
+        min-height: 64px;
+        padding: 12px 14px;
+        gap: 12px;
+    }
+
+    .nav-left h2 {
+        max-width: 72vw;
+        font-size: 18px;
+        overflow-wrap: anywhere;
+    }
+
+    .avatar {
+        width: 34px;
+        height: 34px;
+    }
+
+    .dropdown {
+        right: -4px;
+        min-width: 140px;
+    }
+
+    .card-container {
+        gap: 14px;
+    }
+
+    .card {
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .card:hover,
+    .habit-card:hover {
+        transform: none;
+    }
+
+    #consistency {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    #consistency::after {
+        width: 90px;
+        height: 90px;
+        right: 10px;
+        top: 10px;
+    }
+
+    #consistency p,
+    .card p {
+        font-size: 26px;
+    }
+
+    .consistency-text h2 {
+        font-size: 24px;
+    }
+
+    .donut {
+        align-self: center;
+        width: min(72vw, 190px);
+        height: min(72vw, 190px);
+        margin-top: 0;
+    }
+
+    .habits {
+        margin-top: 22px;
+    }
+
+    .habit-card {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 16px;
+    }
+
+    .actions {
+        width: 100%;
+    }
+
+    .complete-btn,
+    .delete-btn {
+        flex: 1;
+        padding: 10px 8px;
+    }
+
+    .form {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .time-range {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    #sub,
+    .form button {
+        width: 100%;
+        height: 46px;
+    }
+
+    .form input,
+    input[type="time"] {
+        min-height: 46px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 380px) {
+    .time-range {
+        grid-template-columns: 1fr;
+    }
+
+    .actions {
+        flex-direction: column;
+    }
 }

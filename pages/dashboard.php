@@ -24,7 +24,7 @@ if (!isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
 
-    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../Frontend/css/dashboard.css">
 </head>
 
 <body>
@@ -41,7 +41,7 @@ if (!isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
             </div>
 
             <div id="dropdown" class="dropdown">
-                <a href="/habit-tracker/Frontend/pages/profile.html">👤 Profile</a>
+                <a href="/habit-tracker/pages/profile.html">👤 Profile</a>
                 <a href="/habit-tracker/backend/auth/logout.php">Logout</a>
             </div>
         </div>
@@ -108,7 +108,7 @@ if (!isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
 
 </div>
 
-<script src="../js/dashboard.js"></script>
+<script src="../Frontend/js/dashboard.js"></script>
 
 </body>
 </html>

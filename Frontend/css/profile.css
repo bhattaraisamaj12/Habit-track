@@ -2,6 +2,8 @@ body {
     font-family: Arial;
     background: #0f172a;
     color: white;
+    margin: 0;
+    overflow-x: hidden;
 }
 
 #navbar {
@@ -11,6 +13,7 @@ body {
     /* dark background */
     display: flex;
     align-items: center;
+    box-sizing: border-box;
 }
 
 /* NAV LINKS */
@@ -34,9 +37,10 @@ body {
 }
 
 .container {
-    width: 80%;
+    width: min(100% - 32px, 1000px);
     margin: auto;
     padding: 20px;
+    box-sizing: border-box;
 }
 
 .profile-box {
@@ -67,6 +71,52 @@ body {
     background: #1e293b;
     padding: 20px;
     margin: 10% auto;
-    width: 300px;
+    width: min(100% - 32px, 300px);
     border-radius: 10px;
+    box-sizing: border-box;
+}
+
+.modal-content input,
+.modal-content button,
+.profile-box button {
+    width: 100%;
+    min-height: 42px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
+#weeklyChart {
+    max-width: 100%;
+}
+
+@media (max-width: 600px) {
+    #navbar {
+        padding: 12px 16px;
+    }
+
+    #navbar a {
+        padding: 8px 12px;
+    }
+
+    .container {
+        width: 100%;
+        padding: 16px;
+    }
+
+    .profile-box,
+    .chart-box {
+        padding: 16px;
+        border-radius: 8px;
+    }
+
+    .profile-box p {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        overflow-wrap: anywhere;
+    }
+
+    .modal-content {
+        margin: 20vh auto 0;
+    }
 }
