@@ -1,6 +1,6 @@
 <?php
 session_start();
-include("../../backend/config/db.php");
+include("../backend/config/db.php");
 
 if (!isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
 
@@ -66,16 +66,15 @@ if (!isset($_SESSION['username']) && isset($_SESSION['user_id'])) {
 
         </div>
 
-    <div class="card" id="mainStreak">
-        <h3>Streak</h3>
-        <p>🔥 0 days</p>
-    </div>
+        <div class="card" id="mainStreak">
+            <h3>Streak</h3>
+            <p>🔥 0 days</p>
+        </div>
 
-    <div class="card" id="performance">
-        <h3>Performance</h3>
-        <p>Stable</p>
-    </div>
-
+        <div class="card" id="performance">
+            <h3>Performance</h3>
+            <p>Stable</p>
+        </div>
     </div>
 
     <!-- HABITS -->

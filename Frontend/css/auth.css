@@ -3,153 +3,137 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Manrope', sans-serif;
 }
 
-/* BACKGROUND IMAGE */
+/* BACKGROUND */
 body {
     min-height: 100vh;
+    background: #081425;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     padding: 20px;
-    overflow-x: hidden;
-
-    background: linear-gradient(rgba(2, 6, 23, 0.52), rgba(2, 6, 23, 0.52)),
-        url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') no-repeat center/cover;
 }
 
-/* DARK OVERLAY */
-body::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+/* CONTAINER */
+.auth-container {
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(2px);
-    z-index: 0;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+/* HERO SECTION */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hero h1 {
+    font-size: 48px;
+    font-weight: 800;
+    color: white;
+}
+
+.hero span {
+    color: #4CAF50;
+}
+
+.hero p {
+    margin-top: 10px;
+    color: #aaa;
 }
 
 /* GLASS CARD */
 .box {
-    position: relative;
-    z-index: 1;
-
-    width: min(100%, 350px);
     padding: 40px;
-
     border-radius: 20px;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(15px);
-
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-
-    text-align: center;
+    background: rgba(21, 32, 49, 0.7);
+    backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
 }
 
 /* TITLE */
 .box h2 {
     color: white;
-    margin-bottom: 25px;
-    font-weight: 600;
+    margin-bottom: 30px;
 }
 
-/* INPUT FIELDS */
-.box input {
+/* INPUT GROUP */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    font-size: 12px;
+    color: #aaa;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* MODERN INPUT */
+.input-group input {
     width: 100%;
-    padding: 12px 15px;
-    margin: 10px 0;
-
-    border-radius: 25px;
-    border: 1px solid rgba(255, 255, 255, 0.3);
-
-    background: rgba(255, 255, 255, 0.1);
+    padding: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #555;
     color: white;
-
     outline: none;
     transition: 0.3s;
 }
 
-/* PLACEHOLDER */
-.box input::placeholder {
-    color: #ddd;
-}
-
-/* INPUT FOCUS EFFECT */
-.box input:focus {
-    border-color: #4CAF50;
-    box-shadow: 0 0 10px rgba(76, 175, 80, 0.6);
+.input-group input:focus {
+    border-bottom: 1px solid #4CAF50;
 }
 
 /* BUTTON */
 .box button {
     width: 100%;
-    padding: 12px;
-    margin-top: 15px;
-
+    padding: 14px;
+    margin-top: 20px;
     border: none;
-    border-radius: 25px;
-
-    background: linear-gradient(135deg, #4CAF50, #2e7d32);
+    border-radius: 10px;
+    background: linear-gradient(135deg, #4CAF50, #1b5e20);
     color: white;
     font-weight: bold;
-
     cursor: pointer;
     transition: 0.3s;
 }
 
-/* BUTTON HOVER */
 .box button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.5);
+    box-shadow: 0 10px 30px rgba(76, 175, 80, 0.4);
 }
 
 /* TEXT */
 .box p {
     margin-top: 15px;
-    color: #ddd;
+    color: #aaa;
     font-size: 14px;
 }
 
-/* LINKS */
 .box a {
     color: #4CAF50;
     text-decoration: none;
-    font-weight: 500;
 }
 
-.box a:hover {
-    text-decoration: underline;
-}
-
-/* RESPONSE TEXT */
+/* RESPONSE */
 #response {
-    margin-top: 10px;
-    font-size: 13px;
-    color: #ff8080;
+    color: #ff6b6b;
 }
 
-@media (max-width: 480px) {
-    body {
-        align-items: flex-start;
-        padding: 28px 16px;
+/* MOBILE */
+@media (max-width: 768px) {
+    .auth-container {
+        grid-template-columns: 1fr;
     }
 
-    .box {
-        padding: 28px 20px;
-        border-radius: 16px;
-    }
-
-    .box h2 {
-        margin-bottom: 18px;
-        font-size: 24px;
-    }
-
-    .box input,
-    .box button {
-        min-height: 46px;
-        font-size: 16px;
+    .hero {
+        display: none;
     }
 }

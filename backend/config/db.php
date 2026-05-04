@@ -1,8 +1,8 @@
 <?php
-$host = "hostname";
-$user = "username";
-$password = "password";
-$database = "databasename";
+$host = "localhost";
+$user = "root";
+$password = "";
+$database = "habit_tracker";
 
 $conn = new mysqli($host, $user, $password, $database);
 

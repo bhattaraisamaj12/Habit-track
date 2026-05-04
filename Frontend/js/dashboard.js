@@ -59,8 +59,7 @@ function loadHabits() {
         .then(data => {
 
             let habits = data.habits;
-            hasHabits = habits.length > 0; // ✅ added
-
+            hasHabits = habits.length > 0;
             let mainStreak = data.main_streak;
             let consistency = data.consistency;
             let performance = data.performance;
